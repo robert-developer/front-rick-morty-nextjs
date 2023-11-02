@@ -36,7 +36,7 @@ export const Main = async () => {
 
 
 export async function getServerSideProps() {
-  const API_URL = 'http://localhost:5000/graphql'; // URL de tu servidor GraphQL
+  const API_URL = 'http://localhost:5000/graphql';
   const query = gql`
     {
       characters(species: "human") {
@@ -49,7 +49,7 @@ export async function getServerSideProps() {
   `;
 
   try {
-    const { characters }: any = await request(API_URL, query); // Hace la consulta GraphQL al servidor
+    const { characters }: any = await request(API_URL, query); 
     return {
       props: {
         characters,
